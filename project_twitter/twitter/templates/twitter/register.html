@@ -16,30 +16,30 @@
       justify-content: center;
       align-items: center;
     }
-    
+
     /* Estilização dos campos de entrada do formulário */
     .form-control {
       border-radius: 25px;
       padding: 12px 20px;
       transition: all 0.3s ease-in-out;
     }
-    
+
     /* Estilização da linha do formulário */
     .row {
       margin: 0 auto;
       width: 90%;
     }
-    
+
     /* Estilização do rótulo do formulário */
     .form-label {
       width: 100%;
     }
-    
+
     /* Estilização do grupo de entrada */
     .input-group {
       width: 100%;
     }
-    
+
     /* Estilização do texto do grupo de entrada */
     .input-group-text {
       cursor: pointer;
@@ -48,20 +48,20 @@
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
-    
+
     /* Estilização do campo de entrada dentro do grupo de entrada */
     .input-group .form-control {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
-    
+
     /* Estilização do campo de entrada quando focado */
     .form-control:focus {
       border-color: #1da1f2;
       box-shadow: 0 0 5px rgba(29, 161, 242, 0.8);
       outline: none;
     }
-    
+
     /* Estilização do botão de registro */
     .twitter-btn {
       border-radius: 25px;
@@ -74,27 +74,29 @@
       align-items: center;
       position: relative;
     }
-    
+
     /* Estilização do botão de registro quando hover */
     .twitter-btn:hover {
-      background-color: #0c85d0;
+      background-color: #070c0f;
     }
-    
+
     /* Estilização do card de registro */
     .card {
       border-radius: 15px;
-      background-color:  #fef08a;
+      background-color:  #070c0f;
+      margin-bottom:16px;
+      margin-top:16px;
     }
-    
+
     /* Estilização da página de login */
     .login-page {
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #86efac;
+      background:linear-gradient(to right, #01010c , #040a11 );
     }
-    
+
     /* Estilização do spinner de carregamento */
     .spinner-border {
       display: none;
@@ -103,7 +105,7 @@
       border-width: 2px;
       margin-left: 10px;
     }
-    
+
     /* Exibição do spinner de carregamento quando o botão está em estado de carregamento */
     .loading .spinner-border {
       display: inline-block;
@@ -118,8 +120,8 @@
           <!-- Card de registro -->
           <div class="card shadow-sm p-4">
             <header class="text-center mb-4">
-              <img src="https://png.pngtree.com/png-clipart/20230522/ourmid/pngtree-sticky-notes-png-image_7105581.png" alt="Post It logo" class="img-fluid mb-3" style="width: 50px; height: 50px" />
-              <h1 class="h5">Registre-se Post It</h1>
+              <img  src="https://img.freepik.com/vetores-gratis/novo-design-de-icone-x-do-logotipo-do-twitter-em-2023_1017-45418.jpg?semt=ais_hybrid&w=740" alt="Post It logo" class="img-fluid mb-3" style="width: 50px; height: 50px" />
+              <h1 class="h5" style="color: rgb(242, 237, 237)" style="color: rgb(242, 237, 237)">Registre-se </h1>
             </header>
 
             <!-- Formulário de registro -->
@@ -136,56 +138,56 @@
                   {% if form.first_name.errors %}
                     <div class="invalid-feedback d-block">{{ form.first_name.errors|join:' ' }}</div>
                   {% else %}
-                    <div class="invalid-feedback">Por favor, insira seu nome.</div>
+                    <div class="invalid-feedback" style="color: rgb(242, 237, 237)">Por favor, insira seu nome.</div>
                   {% endif %}
                 </div>
               </div>
 
               <!-- Campo de entrada para o nome de usuário -->
               <div class="mb-3">
-                <label for="{{ form.username.id_for_label }}" class="form-label">Nome de usuário</label>
+                <label for="{{ form.username.id_for_label }}" class="form-label" style="color: rgb(242, 237, 237)">Nome de usuário</label>
                 <div class="input-group has-validation">
                   <span class="input-group-text" onclick="document.getElementById('{{ form.username.id_for_label }}').focus();"><i class="bi bi-person"></i></span>
                   {% render_field form.username class='form-control' required='required' %}
                   {% if form.username.errors %}
                     <div class="invalid-feedback d-block">{{ form.username.errors|join:' ' }}</div>
                   {% else %}
-                    <div class="invalid-feedback">Por favor, insira um nome de usuário.</div>
+                    <div class="invalid-feedback" style="color: rgb(242, 237, 237)">Por favor, insira um nome de usuário.</div>
                   {% endif %}
                 </div>
               </div>
 
               <!-- Campo de entrada para o email -->
               <div class="mb-3">
-                <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
+                <label for="{{ form.email.id_for_label }}" class="form-label" style="color: rgb(242, 237, 237)">Email</label>
                 <div class="input-group has-validation">
                   <span class="input-group-text" onclick="document.getElementById('{{ form.email.id_for_label }}').focus();"><i class="bi bi-envelope"></i></span>
                   {% render_field form.email class='form-control' required='required' %}
                   {% if form.email.errors %}
                     <div class="invalid-feedback d-block">{{ form.email.errors|join:' ' }}</div>
                   {% else %}
-                    <div class="invalid-feedback">Por favor, insira um email válido.</div>
+                    <div class="invalid-feedback" style="color: rgb(242, 237, 237)">Por favor, insira um email válido.</div>
                   {% endif %}
                 </div>
               </div>
 
               <!-- Campo de entrada para a senha -->
               <div class="mb-3">
-                <label for="{{ form.password1.id_for_label }}" class="form-label">Senha</label>
+                <label for="{{ form.password1.id_for_label }}" class="form-label" style="color: rgb(242, 237, 237)">Senha</label>
                 <div class="input-group has-validation">
                   <span class="input-group-text" onclick="document.getElementById('{{ form.password1.id_for_label }}').focus();"><i class="bi bi-lock-fill"></i></span>
                   {% render_field form.password1 class='form-control' required='required' %}
                   {% if form.password1.errors %}
                     <div class="invalid-feedback d-block">{{ form.password1.errors|join:' ' }}</div>
                   {% else %}
-                    <div class="invalid-feedback">Por favor, insira uma senha.</div>
+                    <div class="invalid-feedback" style="color: rgb(242, 237, 237)">Por favor, insira uma senha.</div>
                   {% endif %}
                 </div>
               </div>
 
               <!-- Campo de entrada para confirmar a senha -->
               <div class="mb-3">
-                <label for="{{ form.password2.id_for_label }}" class="form-label">Confirmar senha</label>
+                <label for="{{ form.password2.id_for_label }}" class="form-label" style="color: rgb(242, 237, 237)">Confirmar senha</label>
                 <div class="input-group has-validation">
                   <span class="input-group-text" onclick="document.getElementById('{{ form.password2.id_for_label }}').focus();"><i class="bi bi-lock-fill"></i></span>
                   {% render_field form.password2 class='form-control' required='required' %}
@@ -223,10 +225,10 @@
   <script>
     ;(function () {
       'use strict'
-    
+
       // Seleciona todos os formulários que precisam de validação
       var forms = document.querySelectorAll('.needs-validation')
-    
+
       // Adiciona evento de escuta para cada formulário
       Array.prototype.slice.call(forms).forEach(function (form) {
         form.addEventListener(
@@ -242,7 +244,7 @@
               submitBtn.classList.add('loading')
               submitBtn.disabled = true
             }
-    
+
             // Adiciona a classe de validação ao formulário
             form.classList.add('was-validated')
           },
@@ -257,43 +259,43 @@
     document.addEventListener('DOMContentLoaded', function () {
       const password1 = document.getElementById('{{ form.password1.id_for_label }}')
       const password2 = document.getElementById('{{ form.password2.id_for_label }}')
-    
+
       // Seleciona as divs de feedback existentes
       const password1Feedback = password1.parentElement.querySelector('.invalid-feedback')
       const password2Feedback = password2.parentElement.querySelector('.invalid-feedback')
-    
+
       function validatePassword() {
         const pwd = password1.value
         const errors = []
-    
+
         // Verifica se o campo de senha está vazio
         if (!pwd) {
           errors.push('O campo de senha é obrigatório.')
         }
-    
+
         // Verifica o tamanho da senha
         if (pwd.length < 8 || pwd.length > 30) {
           errors.push('A senha deve ter entre 8 e 30 caracteres.')
         }
-    
+
         // Só verifica os outros critérios se o comprimento for válido e não vazio
         if (pwd.length >= 8 && pwd.length <= 30) {
           // Verifica se contém pelo menos uma letra
           if (!/[A-Za-z]/.test(pwd)) {
             errors.push('A senha deve conter pelo menos uma letra.')
           }
-    
+
           // Verifica se contém pelo menos um número
           if (!/\d/.test(pwd)) {
             errors.push('A senha deve conter pelo menos um número.')
           }
-    
+
           // Verifica se contém pelo menos um caractere especial
           if (!/[!@#$%^&*(),.?":{}|<>]/.test(pwd)) {
             errors.push('A senha deve conter pelo menos um caractere especial.')
           }
         }
-    
+
         // Exibe as mensagens de erro e aplica as classes apropriadas
         if (errors.length > 0) {
           password1Feedback.innerText = errors.join(' ')
@@ -305,7 +307,7 @@
           password1.classList.add('is-valid') // Adiciona a classe de sucesso se válido
         }
       }
-    
+
       function validateConfirmPassword() {
         // Verifica se o campo de confirmação de senha está vazio
         if (!password2.value) {
@@ -322,20 +324,20 @@
           password2.classList.add('is-valid') // Adiciona a classe de sucesso se válido
         }
       }
-    
+
       // Eventos de validação para os campos de senha
       password1.addEventListener('input', function () {
         validatePassword()
         validateConfirmPassword()
       })
-    
+
       password2.addEventListener('input', validateConfirmPassword)
-    
+
       // Validação ao submeter o formulário
       document.getElementById('registerForm').addEventListener('submit', function (event) {
         validatePassword()
         validateConfirmPassword()
-    
+
         // Impede o envio se algum campo estiver inválido
         if (!password1.classList.contains('is-valid') || !password2.classList.contains('is-valid')) {
           event.preventDefault()

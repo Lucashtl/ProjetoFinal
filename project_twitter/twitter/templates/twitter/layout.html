@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="https://png.pngtree.com/png-clipart/20230522/ourmid/pngtree-sticky-notes-png-image_7105581.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="https://img.freepik.com/vetores-gratis/novo-design-de-icone-x-do-logotipo-do-twitter-em-2023_1017-45418.jpg?semt=ais_hybrid&w=740" type="image/x-icon" />
 
     <style>
       /* Estilos personalizados para o botão da navbar */
@@ -20,47 +20,47 @@
         margin: 0 5px;
         transition: background-color 0.3s, box-shadow 0.3s;
       }
-      
+
       .navbar .btn-custom:hover,
       .navbar .btn-custom:focus {
-        background-color: #fff9cc;
+        background-color: #182b47;
         outline: none;
         text-decoration: none;
       }
-      
+
       .navbar .btn-custom:active {
         background-color: #0b7ac2;
       }
-      
+
       .navbar .btn-custom:focus {
         box-shadow: 0 0 0 3px rgba(29, 161, 242, 0.5);
       }
-      
+
       /* Estilos responsivos para o botão da navbar */
       @media (max-width: 767px) {
         .navbar .btn-custom {
           margin: 5px 0;
         }
-      
+
         .navbar .navbar-nav {
           text-align: center;
         }
       }
-      
+
       /* Estilo do corpo da página */
       body {
-        background-color: #86efac;
+        background:linear-gradient(to right, #01010c , #040a11 );
       }
-      
+
       /* Estilo da navbar */
       .navbar {
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
-      
+
       /* Estilo da sidebar e do conteúdo principal */
       .sidebar,
       .content {
-        background-color: #fef08a;
+        background-color: linear-gradient(to right, #070d11 , #263c53 );
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         padding: 20px;
@@ -74,8 +74,8 @@
       <!-- Navbar principal -->
       <nav class="navbar navbar-expand-lg navbar-light" style="background:linear-gradient(to right, #16202a , #16202a )">
         <a class="navbar-brand" style="color: Black" href="#">
-          <img src="https://png.pngtree.com/png-clipart/20230522/ourmid/pngtree-sticky-notes-png-image_7105581.png" width="30" height="30" class="d-inline-block align-top" alt="Post It Logo" />
-          Post It
+          <img src="https://img.freepik.com/vetores-gratis/novo-design-de-icone-x-do-logotipo-do-twitter-em-2023_1017-45418.jpg?semt=ais_hybrid&w=740" width="30" height="30" class="d-inline-block align-top" alt="Post It Logo" />
+
         </a>
 
         <!-- Botão de alternância para navegação responsiva -->
@@ -84,19 +84,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a href="{% url 'home' %}" class="btn btn-custom" role="button" aria-label="Início" style="color: Black"><i class="fa fa-home mr-1"></i> Início</a>
+              <a href="{% url 'home' %}" class="btn btn-custom" role="button" aria-label="Início" style="color: rgb(242, 237, 237)"><i class="fa fa-home mr-1"></i> Início</a>
             </li>
 
             <!-- Exibe opções adicionais se a página atual não for login ou registro -->
             {% if request.resolver_match.view_name != 'login' and request.resolver_match.view_name != 'register' %}
               <li class="nav-item">
-                <a href="{% url 'editar' %}" class="btn btn-custom" role="button" style="color: Black" aria-label="Editar Perfil"><i class="fa fa-edit mr-1"></i> Editar</a>
+                <a href="{% url 'editar' %}" class="btn btn-custom" role="button" style="color: rgb(242, 237, 237)" aria-label="Editar Perfil"><i class="fa fa-edit mr-1"></i> Editar</a>
               </li>
 
               <li class="nav-item">
                 <form id="logout-form" method="POST" action="{% url 'logout' %}" style="display: inline">
                   {% csrf_token %}
-                  <button type="submit" class="btn btn-custom" aria-label="Sair" style="color: Black"><i class="fa fa-sign-out mr-1"></i> Sair</button>
+                  <button type="submit" class="btn btn-custom" aria-label="Sair" style="color: rgb(242, 237, 237)"><i class="fa fa-sign-out mr-1"></i> Sair</button>
                 </form>
               </li>
             {% endif %}

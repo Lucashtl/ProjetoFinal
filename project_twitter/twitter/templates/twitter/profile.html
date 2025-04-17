@@ -7,14 +7,14 @@
   <!-- Barra Esquerda -->
   <div class="sidebar m-5 d-none d-md-block">
     <div class="">
-      <div class="card" style="width: 18rem; text-align: center; border-radius: 20px; background-color: #fde211;">
+      <div class="card" style="width: 18rem; text-align: center; border-radius: 20px; background-color: #070c0f;">
         <img class="card-img-top rounded-circle" style="width: 60%; position: relative; left: 62px; padding-top: 20px" src="https://cdn-icons-png.flaticon.com/512/709/709722.png" alt="Card image cap" />
         <div class="card-body">
-          <h5 class="card-title font-weight-bold">{{ user_profile.first_name }}</h5>
-          <h6 class="card-title font-weight-bold">@{{ user_profile.username }}</h6>
-          <p class="card-text">{{ profile.bio }}</p>
-          <p class="card-text">Seguidores: {{ followers_count }}</p>
-          <p class="card-text">Seguindo: {{ following_count }}</p>
+          <h5 class="card-title font-weight-bold" style="color: rgb(242, 237, 237)">{{ user_profile.first_name }}</h5>
+          <h6 class="card-title font-weight-bold"style="color: rgb(242, 237, 237)">@{{ user_profile.username }}</h6>
+          <p class="card-text" style="color: rgb(242, 237, 237)">{{ profile.bio }}</p>
+          <p class="card-text" style="color: rgb(242, 237, 237)">Seguidores: {{ followers_count }}</p>
+          <p class="card-text" style="color: rgb(242, 237, 237)">Seguindo: {{ following_count }}</p>
           {% if request.user != user_profile %}
             <form action="{% if is_following %}{% url 'unfollow' user_profile.username %}{% else %}{% url 'follow' user_profile.username %}{% endif %}" method="post" style="display: inline;">
               {% csrf_token %}
@@ -28,9 +28,9 @@
             </form>
           {% endif %}
         </div>
-      </div>
+      </div style="background-color:#4880a3;">
       {% if request.user == user_profile %}
-        <a href="{% url 'editar' %}" id="addATweetLeft" type="button" style="border-radius: 30px; font-size: 1.1rem; font-weight: bold ; background-color: #1da1f2;" class="btn btn-lg btn-block mt-4 text-white">
+        <a style="color: rgb(242, 237, 237)" href="{% url 'editar' %}" id="addATweetLeft" type="button" style="border-radius: 30px; font-size: 1.1rem; font-weight: bold ; background-color: #4880a3;" class="btn btn-lg btn-block mt-4 text-white">
           Editar meu perfil
         </a>
       {% endif %}
@@ -42,15 +42,15 @@
   <div class="content">
     <!-- Tweets -->
     {% for post in posts %}
-    <div id="tweetCards">
-      <div class="tweet-wrap" style="border-radius: 20px; padding: 20px">
+    <div id="tweetCards" style="background-color: #192b36; margin-top:10px; ">
+      <div class="tweet-wrap" style="padding: 25px; border-radius: 20px;">
         <div class="tweet-header">
           <img src="https://cdn-icons-png.flaticon.com/512/709/709722.png" alt="Card image cap" class="avatar rounded-circle" style="width: 50px; height: 50px" />
           <div class="tweet-header-info ml-3">
-            <span class="username font-weight-bold">{{ post.user.first_name }}</span>
-            <span class="text-muted">@{{ post.user.username }}</span>
-            <span class="text-muted"> · {{ post.timestamp|naturaltime }}</span>
-            <p class="mt-2">{{ post.content }}</p>
+            <span class="username font-weight-bold" style="color: rgb(242, 237, 237)" >{{ post.user.first_name }}</span>
+            <span class="text-muted" style="color: rgb(242, 237, 237)">@{{ post.user.username }}</span>
+            <span class="text-muted" style="color: rgb(242, 237, 237)"> · {{ post.timestamp|naturaltime }}</span>
+            <p  style="color: rgb(242, 237, 237)" class="mt-2">{{ post.content }}</p>
           </div>
         </div>
         <div class="tweet-info-counts d-flex justify-content-around mt-2">
